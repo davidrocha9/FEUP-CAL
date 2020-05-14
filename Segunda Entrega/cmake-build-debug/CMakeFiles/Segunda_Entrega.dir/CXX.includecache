@@ -1,0 +1,82 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/davidrocha/Desktop/Segunda Entrega/Files/FileReader.cpp
+FileReader.h
+/home/davidrocha/Desktop/Segunda Entrega/Files/FileReader.h
+fstream
+-
+iostream
+-
+math.h
+/home/davidrocha/Desktop/Segunda Entrega/Files/math.h
+../Graph/Graph.h
+/home/davidrocha/Desktop/Segunda Entrega/Graph/Graph.h
+../Graph/GraphViewer.h
+/home/davidrocha/Desktop/Segunda Entrega/Graph/GraphViewer.h
+
+/home/davidrocha/Desktop/Segunda Entrega/Files/FileReader.h
+../Graph/Graph.h
+/home/davidrocha/Desktop/Segunda Entrega/Graph/Graph.h
+
+/home/davidrocha/Desktop/Segunda Entrega/Graph/Graph.h
+vector
+-
+
+/home/davidrocha/Desktop/Segunda Entrega/Graph/GraphViewer.h
+vector
+-
+cstdio
+-
+../lib/graphviewer.h
+/home/davidrocha/Desktop/Segunda Entrega/lib/graphviewer.h
+Graph.h
+/home/davidrocha/Desktop/Segunda Entrega/Graph/Graph.h
+
+/home/davidrocha/Desktop/Segunda Entrega/lib/connection.h
+cstdio
+-
+cstdlib
+-
+cstring
+-
+arpa/inet.h
+-
+sys/socket.h
+-
+sys/types.h
+-
+netdb.h
+-
+winsock2.h
+-
+string
+-
+iostream
+-
+
+/home/davidrocha/Desktop/Segunda Entrega/lib/edgetype.h
+
+/home/davidrocha/Desktop/Segunda Entrega/lib/graphviewer.h
+unistd.h
+-
+winsock2.h
+-
+windows.h
+-
+stdlib.h
+-
+signal.h
+-
+string
+-
+edgetype.h
+/home/davidrocha/Desktop/Segunda Entrega/lib/edgetype.h
+connection.h
+/home/davidrocha/Desktop/Segunda Entrega/lib/connection.h
+
