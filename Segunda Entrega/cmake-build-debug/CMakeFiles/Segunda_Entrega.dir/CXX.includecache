@@ -21,12 +21,28 @@ math.h
 /home/davidrocha/Desktop/Segunda Entrega/Graph/GraphViewer.h
 
 /home/davidrocha/Desktop/Segunda Entrega/Files/FileReader.h
+string
+-
 ../Graph/Graph.h
+/home/davidrocha/Desktop/Segunda Entrega/Graph/Graph.h
+
+/home/davidrocha/Desktop/Segunda Entrega/Graph/Graph.cpp
+iostream
+-
+utility
+-
+Graph.h
 /home/davidrocha/Desktop/Segunda Entrega/Graph/Graph.h
 
 /home/davidrocha/Desktop/Segunda Entrega/Graph/Graph.h
 vector
 -
+string
+-
+
+/home/davidrocha/Desktop/Segunda Entrega/Graph/GraphViewer.cpp
+GraphViewer.h
+/home/davidrocha/Desktop/Segunda Entrega/Graph/GraphViewer.h
 
 /home/davidrocha/Desktop/Segunda Entrega/Graph/GraphViewer.h
 vector
@@ -37,6 +53,36 @@ cstdio
 /home/davidrocha/Desktop/Segunda Entrega/lib/graphviewer.h
 Graph.h
 /home/davidrocha/Desktop/Segunda Entrega/Graph/Graph.h
+../Graph/Graph.h
+/home/davidrocha/Desktop/Segunda Entrega/Graph/Graph.h
+../lib/graphviewer.h
+/home/davidrocha/Desktop/Segunda Entrega/lib/graphviewer.h
+
+/home/davidrocha/Desktop/Segunda Entrega/Menus/Menu.cpp
+iostream
+-
+vector
+-
+Menu.h
+/home/davidrocha/Desktop/Segunda Entrega/Menus/Menu.h
+Utils.h
+/home/davidrocha/Desktop/Segunda Entrega/Menus/Utils.h
+../Files/FileReader.h
+/home/davidrocha/Desktop/Segunda Entrega/Files/FileReader.h
+
+/home/davidrocha/Desktop/Segunda Entrega/Menus/Menu.h
+
+/home/davidrocha/Desktop/Segunda Entrega/Menus/Utils.cpp
+iostream
+-
+Utils.h
+/home/davidrocha/Desktop/Segunda Entrega/Menus/Utils.h
+
+/home/davidrocha/Desktop/Segunda Entrega/Menus/Utils.h
+
+/home/davidrocha/Desktop/Segunda Entrega/lib/connection.cpp
+connection.h
+/home/davidrocha/Desktop/Segunda Entrega/lib/connection.h
 
 /home/davidrocha/Desktop/Segunda Entrega/lib/connection.h
 cstdio
@@ -62,6 +108,14 @@ iostream
 
 /home/davidrocha/Desktop/Segunda Entrega/lib/edgetype.h
 
+/home/davidrocha/Desktop/Segunda Entrega/lib/graphviewer.cpp
+graphviewer.h
+/home/davidrocha/Desktop/Segunda Entrega/lib/graphviewer.h
+string
+-
+sstream
+-
+
 /home/davidrocha/Desktop/Segunda Entrega/lib/graphviewer.h
 unistd.h
 -
@@ -79,4 +133,14 @@ edgetype.h
 /home/davidrocha/Desktop/Segunda Entrega/lib/edgetype.h
 connection.h
 /home/davidrocha/Desktop/Segunda Entrega/lib/connection.h
+
+/home/davidrocha/Desktop/Segunda Entrega/main.cpp
+iostream
+-
+Menus/Menu.h
+/home/davidrocha/Desktop/Segunda Entrega/Menus/Menu.h
+Menus/Menu.h
+/home/davidrocha/Desktop/Segunda Entrega/Menus/Menu.h
+Menus/Utils.h
+/home/davidrocha/Desktop/Segunda Entrega/Menus/Utils.h
 

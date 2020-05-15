@@ -47,12 +47,46 @@ void start(){
     //system("cls");
     logo();
     unsigned opt;
+
+    cout << "Escolha uma cidade:" << endl << endl;
+    cout << " 1 - Aveiro" << endl;
+    cout << " 2 - Ermesinde" << endl;
+    cout << " 3 - Fafe" << endl;
+    cout << " 4 - Gondomar" << endl;
+    cout << " 5 - Maia" << endl;
+    cout << " 6 - Porto" << endl;
+    cout << " 7 - Viseu" << endl;
+
+    opt = answer(7);
+
+    switch(opt){
+        case 1:
+            createGraph("Aveiro");
+            break;
+        case 2:
+            createGraph("Ermesinde");
+            break;
+        case 3:
+            createGraph("Fafe");
+            break;
+        case 4:
+            createGraph("Gondomar");
+            break;
+        case 5:
+            createGraph("Maia");
+            break;
+        case 6:
+            createGraph("Porto");
+            break;
+        case 7:
+            createGraph("Viseu");
+            break;
+    }
 }
 
 void mainMenu(){
     bool return_menu = true;
     unsigned int opt;
-    createGraph();
     do{
         logo();
         cout << " 1 - Escolher Trilho" << endl;

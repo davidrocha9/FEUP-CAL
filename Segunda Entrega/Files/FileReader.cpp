@@ -7,6 +7,34 @@
 
 using namespace std;
 
+string makeLower(string s){
+    for (char & x : s){
+        x = tolower(x);
+    }
+    return s;
+}
+
+void createGraph(const string& cityName){
+    Graph graph;
+    readNodes(graph, cityName);
+    readEdges(graph, cityName);
+    readTags(graph, cityName);
+
+    graphDisplay gd(graph, 1920, 1080);
+    gd.show();
+
+    getchar();
+
+}
+
+int getDifficulty(double s){
+    if (s < 4)
+        return 1;
+    else if (s < 8)
+        return 2;
+    return 3;
+}
+
 double getDur(double w, double s){
     if (s > 0)
         return w/1.25;
@@ -30,17 +58,11 @@ double getSlope(){
     return slopeNum/slopeDen;
 }
 
-void createGraph(){
-    Graph graph;
-    readNodes(graph);
-    readEdges(graph);
-
-    createWindow(graph);
-}
-
-void readNodes(Graph &graph) {
+void readNodes(Graph &graph, string cityName) {
     ifstream file;
-    file.open("../Maps/GridGraphs/4x4/nodes.txt");
+    string lowerName = makeLower(cityName);
+    string fileName = "../Maps/PortugalMaps/" + cityName + "/nodes_x_y_" + lowerName + ".txt";
+    file.open(fileName);
     string temp = "";
     int id, var = 0;
     double x, y;
@@ -66,11 +88,13 @@ void readNodes(Graph &graph) {
     file.close();
 }
 
-void readEdges(Graph &graph) {
+void readEdges(Graph &graph, string cityName) {
     ifstream file;
-    file.open("../Maps/GridGraphs/4x4/edges.txt");
+    string lowerName = makeLower(cityName);
+    string fileName = "../Maps/PortugalMaps/" + cityName + "/edges_" + lowerName + ".txt";
+    file.open(fileName);
     string temp = "";
-    int src, dest;
+    int src, dest, difficulty;
     double weight, slope;
 
     if(file.is_open()){
@@ -84,12 +108,44 @@ void readEdges(Graph &graph) {
             }
             slope = getSlope();
             weight = getDistance(src, dest, graph, slope);
-            graph.addEdge(src, dest, weight, slope, getDur(weight, slope));
-            graph.addEdge(dest, src, weight, -slope, getDur(weight, slope));
+            difficulty = getDifficulty(slope);
+            graph.addEdge(src, dest, weight, slope, getDur(weight, slope), difficulty);
+            graph.addEdge(dest, src, weight, -slope, getDur(weight, slope), difficulty);
+        }
+    }
+    file.close();
+}
 
-            cout << slope << endl;
-            cout << weight << endl;
-            cout << getDur(weight, slope) << endl << endl;
+void readTags(Graph &graph, string cityName) {
+    ifstream file;
+    string lowerName = makeLower(cityName);
+    string fileName = "../Maps/TagExamples/" + cityName + "/t03_tags_" + lowerName + ".txt";
+    file.open(fileName);
+    string temp = "", tagName = "";
+
+    if(file.is_open()){
+        getline(file, temp);
+        while(getline(file, temp)){
+            if (temp.find("tourism") != string::npos) {
+                tagName = temp.erase(0, 8);
+                getline(file, temp);
+            } else
+                graph.findVertex(stoi(temp))->setType(tagName);
+        }
+    }
+
+    file.close();
+
+    fileName = "../Maps/TagExamples/" + cityName + "/t10_tags_" + lowerName + ".txt";
+    file.open(fileName);
+    if(file.is_open()){
+        getline(file, temp);
+        while(getline(file, temp)){
+            if (temp.find("amenity") != string::npos) {
+                tagName = temp.erase(0, 8);
+                getline(file, temp);
+            } else
+                graph.findVertex(stoi(temp))->setType(tagName);
         }
     }
     file.close();

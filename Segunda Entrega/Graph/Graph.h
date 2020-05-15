@@ -2,19 +2,20 @@
 #define SEGUNDA_ENTREGA_GRAPH_H
 
 #include <vector>
+#include <string>
 
 using namespace std;
 
-/************************* Edge **************************/
 class Edge{
-    int destID;
+    int destID, difficulty;
     double weight, slope, dur;
 public:
     //Constructor
-    Edge(int destID, double weight, double slope, double dur);
+    Edge(int destID, double weight, double slope, double dur, int dif);
 
     //Get Methods
     int getDestID();
+    int getDifficulty();
     double getWeight();
     double getSlope();
     double getDur();
@@ -23,11 +24,11 @@ public:
     friend class Vertex;
 };
 
-/************************* Vertex **************************/
 class Vertex{
     int id;
     double x, y;
     bool visited;
+    string type;
     vector<Edge> adj;
 
 public:
@@ -39,19 +40,20 @@ public:
     int getX();
     int getY();
     bool getVisited();
+    string getType();
     vector<Edge> getAdj();
 
     // Set Methods
     void setId(int id);
     void setX(int x);
     void setY(int y);
+    void setType(string t);
     void setVisited();
-    void addEdge(const int &dest, const double &w, const double &s, const double &d);
+    void addEdge(const int &dest, const double &w, const double &s, const double &d, const int &dif);
 
     friend class Graph;
 };
 
-/************************* Vertex **************************/
 class Graph{
     double minX, maxX, minY, maxY;
     vector<Vertex*> vertexSet;
@@ -68,7 +70,7 @@ public:
 
     Vertex *findVertex(const int &id) const;
     bool addVertex(const int &id, const double &x, const double &y);
-    bool addEdge(const int &sourc, const int &dest, const double &weight, const double &slope, const double &dur);
+    bool addEdge(const int &sourc, const int &dest, const double &weight, const double &slope, const double &dur, const int &dif);
 };
 
 #endif //SEGUNDA_ENTREGA_GRAPH_H
